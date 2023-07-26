@@ -658,6 +658,20 @@ class RouterSpec: QuickSpec {
                         expect(displayedTooltip.superview).toEventually(beNil())
                     }
 
+                    it("will remove the tooltip if targeted view changes its identifier to another value") {
+                        router.displayTooltip(tooltip,
+                                              targetView: targetView,
+                                              identifier: TooltipViewIdentifierMock,
+                                              imageBlob: imageBlob,
+                                              becameVisibleHandler: { _ in },
+                                              confirmation: true,
+                                              completion: { _ in })
+                        expect(window.findTooltipView()).toEventuallyNot(beNil())
+                        let displayedTooltip = window.findTooltipView()!
+                        router.viewDidUpdateIdentifier(from: TooltipViewIdentifierMock, to: "new-id", view: targetView)
+                        expect(displayedTooltip.superview).toEventually(beNil())
+                    }
+
                     it("will remove the tooltip if targeted view gets removed from superview") {
                         router.displayTooltip(tooltip,
                                               targetView: targetView,

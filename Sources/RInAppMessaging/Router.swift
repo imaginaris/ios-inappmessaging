@@ -57,7 +57,7 @@ internal class Router: RouterType, ViewListenerObserver {
 
     private let dependencyManager: TypedDependencyManager
     private let displayQueue = DispatchQueue(label: "IAM.MessageLoader")
-    private var displayedTooltips = [String: TooltipView]()
+    private var displayedTooltips = [String: TooltipView]() // ensure single thread access
     private var positionObservers = [TooltipView: [NSKeyValueObservation]]()
 
     weak var errorDelegate: ErrorDelegate?
@@ -445,12 +445,7 @@ extension Router {
 
     func viewDidUpdateIdentifier(from: String?, to: String?, view: UIView) {
         if let oldIdentifier = from, displayedTooltips[oldIdentifier] != nil {
-            if let newIdentifier = to {
-                displayedTooltips[newIdentifier] = displayedTooltips[oldIdentifier]
-                displayedTooltips[oldIdentifier] = nil
-            } else {
-                viewDidGetRemovedFromSuperview(view, identifier: oldIdentifier)
-            }
+            viewDidGetRemovedFromSuperview(view, identifier: oldIdentifier)
         }
     }
 }

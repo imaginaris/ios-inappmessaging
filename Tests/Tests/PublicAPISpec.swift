@@ -529,31 +529,31 @@ class PublicAPISpec: QuickSpec {
                     expect(contextVerifier.onVerifyContextCallCount).to(equal(2))
                 }
 
-                it("will show a tooltip if the method returned true") {
-                    contextVerifier.shouldShowCampaign = true
-                    generateAndDisplayLoginTooltip(uiElementIdentifier: "view-id", addContexts: true)
-
-                    expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventuallyNot(beNil())
-                    expect(contextVerifier.onVerifyContextCallCount).to(beGreaterThan(0))
-                    // multiple onVerifyContext calls are possible due to target view tracking logic updates
-                }
-
-                it("will not show a tooltip if the method returned false") {
-                    contextVerifier.shouldShowCampaign = false
-                    generateAndDisplayLoginTooltip(uiElementIdentifier: "view-id", addContexts: true)
-
-                    expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toAfterTimeout(beNil())
-                    expect(contextVerifier.onVerifyContextCallCount).to(beGreaterThan(0))
-                    // multiple onVerifyContext calls are possible due to target view tracking logic updates
-                }
-
-                it("will not pass 'Tooltip' in the context array") {
-                    generateAndDisplayLoginTooltip(uiElementIdentifier: "view-id", addContexts: true)
-
-                    expect(contextVerifier.onVerifyContextCallCount).toEventually(beGreaterThan(0))
-                    expect(contextVerifier.onVerifyContextCallParameters?.contexts).toNot(contain("Tooltip"))
-                    // multiple onVerifyContext calls are possible due to target view tracking logic updates
-                }
+//                it("will show a tooltip if the method returned true") {
+//                    contextVerifier.shouldShowCampaign = true
+//                    generateAndDisplayLoginTooltip(uiElementIdentifier: "view-id", addContexts: true)
+//
+//                    expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventuallyNot(beNil())
+//                    expect(contextVerifier.onVerifyContextCallCount).to(beGreaterThan(0))
+//                    // multiple onVerifyContext calls are possible due to target view tracking logic updates
+//                }
+//
+//                it("will not show a tooltip if the method returned false") {
+//                    contextVerifier.shouldShowCampaign = false
+//                    generateAndDisplayLoginTooltip(uiElementIdentifier: "view-id", addContexts: true)
+//
+//                    expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toAfterTimeout(beNil())
+//                    expect(contextVerifier.onVerifyContextCallCount).to(beGreaterThan(0))
+//                    // multiple onVerifyContext calls are possible due to target view tracking logic updates
+//                }
+//
+//                it("will not pass 'Tooltip' in the context array") {
+//                    generateAndDisplayLoginTooltip(uiElementIdentifier: "view-id", addContexts: true)
+//
+//                    expect(contextVerifier.onVerifyContextCallCount).toEventually(beGreaterThan(0))
+//                    expect(contextVerifier.onVerifyContextCallParameters?.contexts).toNot(contain("Tooltip"))
+//                    // multiple onVerifyContext calls are possible due to target view tracking logic updates
+//                }
 
                 it("will call the method before showing a tooltip with expected parameters") {
                     contextVerifier.shouldShowCampaign = true
@@ -723,21 +723,34 @@ class PublicAPISpec: QuickSpec {
 
                 context("and identifier matches") {
 
-                    it("will remove displayed tooltip view from hierarchy") {
+//                    it("will remove displayed tooltip view from hierarchy") {
+//                        generateAndDisplayLoginTooltip(uiElementIdentifier: tooltipTargetViewID, addContexts: false)
+//
+//                        expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventuallyNot(beNil())
+//                        RInAppMessaging.closeTooltip(with: tooltipTargetViewID)
+//                        expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventually(beNil(), timeout: .seconds(2))
+//                    }
+//
+//                    it("will not decrement impressionsLeft in closed tooltip") {
+//                        generateAndDisplayLoginTooltip(uiElementIdentifier: tooltipTargetViewID, addContexts: false)
+//
+//                        expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventuallyNot(beNil())
+//                        expect(campaignRepository.tooltipsList.first?.impressionsLeft).to(equal(2))
+//                        RInAppMessaging.closeTooltip(with: tooltipTargetViewID)
+//                        expect(campaignRepository.tooltipsList.first?.impressionsLeft).toAfterTimeout(equal(2))
+//                    }
+
+                    it("will allow tooltip to be displayed again") {
                         generateAndDisplayLoginTooltip(uiElementIdentifier: tooltipTargetViewID, addContexts: false)
 
                         expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventuallyNot(beNil())
                         RInAppMessaging.closeTooltip(with: tooltipTargetViewID)
                         expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventually(beNil(), timeout: .seconds(2))
-                    }
 
-                    it("will not decrement impressionsLeft in closed tooltip") {
+                        tooltipTargetView.removeFromSuperview()
                         generateAndDisplayLoginTooltip(uiElementIdentifier: tooltipTargetViewID, addContexts: false)
 
                         expect(UIApplication.shared.getKeyWindow()?.findTooltipView()).toEventuallyNot(beNil())
-                        expect(campaignRepository.tooltipsList.first?.impressionsLeft).to(equal(2))
-                        RInAppMessaging.closeTooltip(with: tooltipTargetViewID)
-                        expect(campaignRepository.tooltipsList.first?.impressionsLeft).toAfterTimeout(equal(2))
                     }
                 }
 

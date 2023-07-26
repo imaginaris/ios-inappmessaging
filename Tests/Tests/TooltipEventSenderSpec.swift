@@ -71,6 +71,20 @@ class TooltipEventSenderSpec: QuickSpec {
                     expect(iamModule.loggedEvent?.type).to(equal(.viewAppeared))
                     expect((iamModule.loggedEvent as? ViewAppearedEvent)?.viewIdentifier).to(equal(TooltipViewIdentifierMock))
                 }
+
+                it("will log event for matching view only once") {
+                    let superview = UIView()
+                    let view = UIView()
+                    view.accessibilityIdentifier = TooltipViewIdentifierMock
+                    superview.addSubview(view)
+                    campaignRepository.list = [TestHelpers.generateTooltip(id: "test")]
+
+                    eventSender.viewDidChangeSuperview(view, identifier: TooltipViewIdentifierMock)
+                    expect(iamModule.loggedEvent).toEventuallyNot(beNil())
+                    iamModule.loggedEvent = nil
+                    eventSender.viewDidChangeSuperview(view, identifier: TooltipViewIdentifierMock)
+                    expect(iamModule.loggedEvent).toAfterTimeout(beNil())
+                }
             }
 
             context("when calling viewDidMoveToWindow") {
@@ -91,25 +105,40 @@ class TooltipEventSenderSpec: QuickSpec {
                     expect(iamModule.loggedEvent?.type).to(equal(.viewAppeared))
                     expect((iamModule.loggedEvent as? ViewAppearedEvent)?.viewIdentifier).to(equal(TooltipViewIdentifierMock))
                 }
-            }
 
-            context("when calling viewDidUpdateIdentifier") {
-                it("will not iterate over displayed views") {
-                    eventSender.viewDidUpdateIdentifier(from: nil, to: "id", view: UIView())
-                    expect(viewListener.wasIterateOverDisplayedViewsCalled).to(beFalse())
-                }
-
-                it("will log event for matching view") {
+                it("will log event for matching view only once") {
                     let superview = UIView()
                     let view = UIView()
                     view.accessibilityIdentifier = TooltipViewIdentifierMock
                     superview.addSubview(view)
                     campaignRepository.list = [TestHelpers.generateTooltip(id: "test")]
 
-                    eventSender.viewDidUpdateIdentifier(from: "old-id", to: TooltipViewIdentifierMock, view: view)
+                    eventSender.viewDidMoveToWindow(view, identifier: TooltipViewIdentifierMock)
+                    expect(iamModule.loggedEvent).toEventuallyNot(beNil())
+                    iamModule.loggedEvent = nil
+                    eventSender.viewDidMoveToWindow(view, identifier: TooltipViewIdentifierMock)
+                    expect(iamModule.loggedEvent).toAfterTimeout(beNil())
+                }
+            }
+
+            context("when calling verifySwiftUIViewAppearance") {
+                it("will log event for matching view") {
+                    campaignRepository.list = [TestHelpers.generateTooltip(id: "test")]
+
+                    eventSender.verifySwiftUIViewAppearance(identifier: TooltipViewIdentifierMock)
                     expect(iamModule.loggedEvent).toEventuallyNot(beNil())
                     expect(iamModule.loggedEvent?.type).to(equal(.viewAppeared))
                     expect((iamModule.loggedEvent as? ViewAppearedEvent)?.viewIdentifier).to(equal(TooltipViewIdentifierMock))
+                }
+
+                it("will log event for matching view only once") {
+                    campaignRepository.list = [TestHelpers.generateTooltip(id: "test")]
+
+                    eventSender.verifySwiftUIViewAppearance(identifier: TooltipViewIdentifierMock)
+                    expect(iamModule.loggedEvent).toEventuallyNot(beNil())
+                    iamModule.loggedEvent = nil
+                    eventSender.verifySwiftUIViewAppearance(identifier: TooltipViewIdentifierMock)
+                    expect(iamModule.loggedEvent).toAfterTimeout(beNil())
                 }
             }
         }

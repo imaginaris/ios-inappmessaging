@@ -655,7 +655,7 @@ final class TooltipViewMock: TooltipView {
 }
 
 final class InAppMessagingModuleMock: InAppMessagingModule {
-    private(set) var loggedEvent: Event?
+    var loggedEvent: Event?
 
     init() {
         super.init(configurationManager: ConfigurationManagerMock(),

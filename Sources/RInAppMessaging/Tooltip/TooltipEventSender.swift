@@ -3,6 +3,7 @@ import class UIKit.UIView
 
 protocol TooltipEventSenderType: AnyObject {
     func verifySwiftUIViewAppearance(identifier: String)
+    func undoEvent(tooltipID: String)
 }
 
 class TooltipEventSender: TooltipEventSenderType, ViewListenerObserver, CampaignRepositoryDelegate {
@@ -33,6 +34,12 @@ class TooltipEventSender: TooltipEventSenderType, ViewListenerObserver, Campaign
 
         triggeredTooltipIds.append(tooltip.id)
         RInAppMessaging.logEvent(ViewAppearedEvent(viewIdentifier: identifier))
+    }
+
+    func undoEvent(tooltipID: String) {
+        triggeredTooltipIds.removeAll {
+            $0 == tooltipID
+        }
     }
 
     private func verifyAppearance(of view: UIView, identifier: String) {
@@ -81,9 +88,6 @@ extension TooltipEventSender {
     }
 
     func viewDidUpdateIdentifier(from: String?, to: String?, view: UIView) {
-        guard let identifier = to else {
-            return
-        }
-        verifyAppearance(of: view, identifier: identifier)
+        // unused
     }
 }
