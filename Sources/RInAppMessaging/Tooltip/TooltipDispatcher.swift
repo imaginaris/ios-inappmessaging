@@ -79,7 +79,7 @@ internal class TooltipDispatcher: TooltipDispatcherType, ViewListenerObserver {
             }
             for tooltip in self.activeTooltips {
                 guard let uiElementIdentifier = tooltip.tooltipData?.bodyData.uiElementIdentifier,
-                      identifier.contains(uiElementIdentifier) else {
+                      identifier == uiElementIdentifier else {
                     continue
                 }
 
