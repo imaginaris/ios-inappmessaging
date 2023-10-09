@@ -78,6 +78,7 @@ internal class InAppMessagingModule: ErrorDelegate, CampaignDispatcherDelegate, 
     /// Stores passed event with matching campaign.
     /// - Parameter event: event to be processed
     /// - Returns: `false` if module is not initialized
+    @discardableResult
     func logEvent(_ event: Event) -> Bool {
         guard isInitialized else {
             return false

@@ -18,7 +18,6 @@ internal protocol ViewListenerObserver: AnyObject {
     func viewDidChangeSuperview(_ view: UIView, identifier: String)
     func viewDidMoveToWindow(_ view: UIView, identifier: String)
     func viewDidGetRemovedFromSuperview(_ view: UIView, identifier: String)
-    func viewDidUpdateIdentifier(from: String?, to: String?, view: UIView)
 }
 
 /// A class responsible for tracking UIView changes in the hierarchy.
@@ -33,6 +32,8 @@ internal final class ViewListener: ViewListenerType {
     @AtomicGetSet private(set) var isListening = false
     fileprivate var observers = [WeakWrapper<ViewListenerObserver>]()
     private let windowGetter: () -> UIWindow?
+    fileprivate var registeredViews = [String: WeakWrapper<UIView>]()
+    fileprivate var registeredTabBarButtons = [String: WeakWrapper<UITabBarItem>]()
 
     private init(windowGetter: @escaping () -> UIWindow? = UIApplication.shared.getKeyWindow) {
         self.windowGetter = windowGetter
@@ -103,12 +104,17 @@ internal final class ViewListener: ViewListenerType {
         }
     }
 
+    func register(_ view: UIView, identifier: String) {
+        registeredViews[identifier] = WeakWrapper(value: view)
+    }
+
+    func register(_ tabBarItem: UITabBarItem, identifier: String) {
+        registeredTabBarButtons[identifier] = WeakWrapper(value: tabBarItem)
+    }
+
     private func performSwizzling() -> Bool {
         [swizzle(#selector(UIView.didMoveToSuperview), with: #selector(UIView.swizzledDidMoveToSuperview)),
          swizzle(#selector(UIView.removeFromSuperview), with: #selector(UIView.swizzledRemoveFromSuperview)),
-         swizzle(#selector(setter: UIView.accessibilityIdentifier),
-                 with: #selector(NSObject.swizzledSetAccessibilityIdentifier),
-                 of: NSObject.self),
          swizzle(#selector(UIView.didMoveToWindow), with: #selector(UIView.swizzledDidMoveToWindow))].allSatisfy { $0 == true }
     }
 
@@ -125,24 +131,24 @@ internal final class ViewListener: ViewListenerType {
     }
 }
 
-private extension NSObject {
-    @objc func swizzledSetAccessibilityIdentifier(_ identifier: String?) {
-        let oldIdentifier = (self as? UIView)?.accessibilityIdentifier
-        self.swizzledSetAccessibilityIdentifier(identifier)
-
-        guard let self = self as? UIView, oldIdentifier != identifier else {
-            return
-        }
-        ViewListener.currentInstance.observers.forEach {
-            $0.value?.viewDidUpdateIdentifier(from: oldIdentifier, to: identifier, view: self)
-        }
-    }
-}
-
 private extension UIView {
 
     var identifier: String {
-        accessibilityIdentifier ?? ""
+        guard let tabBarParent = superview as? UITabBar else {
+            // normal UIView
+            return ViewListener.currentInstance.registeredViews.first(where: {
+                $1.value === self
+            })?.key ?? ""
+        }
+
+        guard let tabBarButton = self as? UIControl,
+              let tabBarItem = tabBarParent.item(of: tabBarButton) else {
+            return ""
+        }
+
+        return ViewListener.currentInstance.registeredTabBarButtons.first(where: {
+            $1.value === tabBarItem
+        })?.key ?? ""
     }
 
     // TOOLTIP: support isHidden

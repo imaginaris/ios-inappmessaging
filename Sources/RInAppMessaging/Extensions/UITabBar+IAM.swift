@@ -1,24 +1,35 @@
 import UIKit
 
-public extension UITabBar {
+internal extension UITabBar {
 
-    /// Updates accessibilityIdentifer value of UITabBar buttons.
-    /// The values are taken from corresponding UITabBarItem objects present in `items` array.
-    @objc func updateItemIdentifiers() {
-        guard let tabBarItems = items, !tabBarItems.isEmpty else {
-            return
-        }
+    /// Returns UIControl subviews that are supposed to be UITabBarButton instances matching elements in `items`.
+    var buttons: [UIControl] {
         let tabBarButtons = subviews
-            .filter { $0.isKind(of: NSClassFromString("UIControl")!) } // We are looking for instances of UITabBarButton private class
+            .compactMap { $0 as? UIControl } // We are looking for instances of UITabBarButton private class
             .sorted { $0.frame.minX < $1.frame.minX } // Ensuring the right order
 
         guard tabBarButtons.count == items?.count else {
             Logger.debug("Unexpected tab bar items setup: \(tabBarButtons) \(items ?? [])")
-            return
+            return []
         }
 
-        zip(tabBarItems, tabBarButtons).forEach { (item, button) in
-            button.accessibilityIdentifier = item.accessibilityIdentifier
+        return tabBarButtons
+    }
+
+    /// Returns item instance that corresponds with provided tab bar button
+    func item(of button: UIControl) -> UITabBarItem? {
+        guard let buttonItemIndex = buttons.firstIndex(where: { $0 === button }) else {
+            return nil
         }
+
+        // index safety is ensured in `buttons` implementation
+        return items?[buttonItemIndex]
+    }
+}
+
+public extension UITabBarItem {
+    /// identifier should not be empty
+    @objc func canHaveTooltip(identifier: String) {
+        ViewListener.currentInstance.register(self, identifier: identifier)
     }
 }

@@ -328,6 +328,10 @@ internal class Router: RouterType, ViewListenerObserver {
             self?.updateFrame(targetView: targetView, tooltipView: tooltipView, superview: superview, position: position)
             verifyVisibility()
         }
+        let frameObserver = targetView.observe(\.frame, options: []) { _, _ in
+            newPositionHandler()
+        }
+        positionObservers[tooltipView] = [frameObserver]
 
         if let parentScrollView = superview as? UIScrollView {
             let screenTransitionObserver = parentScrollView.observe(\.frame, options: []) { _, _ in
@@ -336,12 +340,8 @@ internal class Router: RouterType, ViewListenerObserver {
             let viewVisibilityObserver = parentScrollView.observe(\.contentOffset, options: []) { _, _ in
                 verifyVisibility()
             }
-            positionObservers[tooltipView] = [screenTransitionObserver, viewVisibilityObserver]
-        } else {
-            let observer = targetView.observe(\.frame, options: []) { _, _ in
-                newPositionHandler()
-            }
-            positionObservers[tooltipView] = [observer]
+            positionObservers[tooltipView]?.append(screenTransitionObserver)
+            positionObservers[tooltipView]?.append(viewVisibilityObserver)
         }
 
         let orientationObserver = NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: nil) { _ in

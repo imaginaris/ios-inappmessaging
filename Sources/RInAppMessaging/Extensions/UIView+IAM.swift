@@ -27,6 +27,13 @@ extension UIView {
     }
 }
 
+public extension UIView {
+    /// identifier should not be empty
+    @objc func canHaveTooltip(identifier: String) {
+        ViewListener.currentInstance.register(self, identifier: identifier)
+    }
+}
+
 extension NSLayoutConstraint {
     /// Changes multiplier constraint
     /// - Parameter multiplier: The constant multiplied with the attribute
