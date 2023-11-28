@@ -7,30 +7,30 @@ import RSDKUtilsMain
 import RSDKUtils
 #endif
 
-internal protocol ViewListenerType: AnyObject {
+internal protocol TooltipTargetViewListenerType: AnyObject {
     func startListening()
     func stopListening()
-    func addObserver(_ observer: ViewListenerObserver)
+    func addObserver(_ observer: TooltipTargetViewListenerObserver)
     func iterateOverDisplayedViews(_ handler: @escaping (_ view: UIView, _ identifier: String, _ stop: inout Bool) -> Void)
 }
 
-internal protocol ViewListenerObserver: AnyObject {
-    func viewDidChangeSuperview(_ view: UIView, identifier: String)
-    func viewDidMoveToWindow(_ view: UIView, identifier: String)
-    func viewDidGetRemovedFromSuperview(_ view: UIView, identifier: String)
+internal protocol TooltipTargetViewListenerObserver: AnyObject {
+    func targetViewDidChangeSuperview(_ view: UIView, identifier: String)
+    func targetViewDidMoveToWindow(_ view: UIView, identifier: String)
+    func targetViewDidGetRemovedFromSuperview(_ view: UIView, identifier: String)
 }
 
 /// A class responsible for tracking UIView changes in the hierarchy.
 /// All changes are reported to registered ViewListenerObserver objects.
 /// This class is based on swizzling and MUST be used as a singleton to aviod unexpected behaviour.
 /// - Note: SwiftUI owned windows are not supported.
-internal final class ViewListener: ViewListenerType {
+internal final class TooltipTargetViewListener: TooltipTargetViewListenerType {
 
     // A static singleton-like value is necessary for UIView methods to access this class
-    static private(set) var currentInstance = ViewListener()
+    static private(set) var currentInstance = TooltipTargetViewListener()
 
     @AtomicGetSet private(set) var isListening = false
-    fileprivate var observers = [WeakWrapper<ViewListenerObserver>]()
+    fileprivate var observers = [WeakWrapper<TooltipTargetViewListenerObserver>]()
     private let windowGetter: () -> UIWindow?
     fileprivate var registeredViews = [String: WeakWrapper<UIView>]()
     fileprivate var registeredTabBarButtons = [String: WeakWrapper<UITabBarItem>]()
@@ -41,7 +41,7 @@ internal final class ViewListener: ViewListenerType {
 
     static func reinitialize(windowGetter: @escaping () -> UIWindow?) {
         currentInstance.stopListening()
-        currentInstance = ViewListener(windowGetter: windowGetter)
+        currentInstance = TooltipTargetViewListener(windowGetter: windowGetter)
     }
 
     func startListening() {
@@ -57,12 +57,27 @@ internal final class ViewListener: ViewListenerType {
             return
         }
 
-        iterateOverDisplayedViews { existingView, identifier, _ in
+//        iterateOverDisplayedViews { existingView, identifier, _ in
+//            guard !identifier.isEmpty else {
+//                return
+//            }
+//
+//            existingView.didMoveToWindowNotifyObservers()
+//        }
+        registeredViews.forEach { identifier, viewContrainer in
             guard !identifier.isEmpty else {
                 return
             }
 
-            existingView.didMoveToWindowNotifyObservers()
+            viewContrainer.value?.didMoveToWindowNotifyObservers()
+        }
+        // looking only for UITabBarButtons
+        iterateOverDisplayedViews { displayedView, identifier, _ in
+            guard !identifier.isEmpty else {
+                return
+            }
+
+            displayedView.didMoveToWindowNotifyObservers()
         }
     }
 
@@ -79,7 +94,7 @@ internal final class ViewListener: ViewListenerType {
         }
     }
 
-    func addObserver(_ observer: ViewListenerObserver) {
+    func addObserver(_ observer: TooltipTargetViewListenerObserver) {
         observers.append(WeakWrapper(value: observer))
     }
 
@@ -88,7 +103,8 @@ internal final class ViewListener: ViewListenerType {
             return
         }
         DispatchQueue.main.async {
-            guard let allWindowSubviews = self.windowGetter()?.getAllSubviewsExceptTooltipView() else {
+            guard let allWindowSubviews = self.windowGetter()?.getAllSubviewsExceptTooltipView()
+                .filter({ !$0.tooltipIdentifier.isEmpty }) else {
                 return
             }
             var stop = false
@@ -96,7 +112,8 @@ internal final class ViewListener: ViewListenerType {
                 guard !stop else {
                     return
                 }
-                guard let identifier = existingView.accessibilityIdentifier, !identifier.isEmpty else {
+                let identifier = existingView.tooltipIdentifier
+                guard !identifier.isEmpty else {
                     continue
                 }
                 handler(existingView, identifier, &stop)
@@ -133,10 +150,10 @@ internal final class ViewListener: ViewListenerType {
 
 private extension UIView {
 
-    var identifier: String {
+    var tooltipIdentifier: String {
         guard let tabBarParent = superview as? UITabBar else {
             // normal UIView
-            return ViewListener.currentInstance.registeredViews.first(where: {
+            return TooltipTargetViewListener.currentInstance.registeredViews.first(where: {
                 $1.value === self
             })?.key ?? ""
         }
@@ -146,7 +163,7 @@ private extension UIView {
             return ""
         }
 
-        return ViewListener.currentInstance.registeredTabBarButtons.first(where: {
+        return TooltipTargetViewListener.currentInstance.registeredTabBarButtons.first(where: {
             $1.value === tabBarItem
         })?.key ?? ""
     }
@@ -156,29 +173,29 @@ private extension UIView {
     @objc func swizzledDidMoveToSuperview() {
         self.swizzledDidMoveToSuperview()
 
-        guard !identifier.isEmpty else {
+        guard !tooltipIdentifier.isEmpty else {
             return
         }
-        ViewListener.currentInstance.observers.forEach {
-            $0.value?.viewDidChangeSuperview(self, identifier: identifier)
+        TooltipTargetViewListener.currentInstance.observers.forEach {
+            $0.value?.targetViewDidChangeSuperview(self, identifier: tooltipIdentifier)
         }
     }
 
     @objc func swizzledRemoveFromSuperview() {
         self.swizzledRemoveFromSuperview()
 
-        guard !identifier.isEmpty else {
+        guard !tooltipIdentifier.isEmpty else {
             return
         }
-        ViewListener.currentInstance.observers.forEach {
-            $0.value?.viewDidGetRemovedFromSuperview(self, identifier: identifier)
+        TooltipTargetViewListener.currentInstance.observers.forEach {
+            $0.value?.targetViewDidGetRemovedFromSuperview(self, identifier: tooltipIdentifier)
         }
     }
 
     @objc func swizzledDidMoveToWindow() {
         self.swizzledDidMoveToWindow()
 
-        guard !identifier.isEmpty else {
+        guard !tooltipIdentifier.isEmpty else {
             return
         }
         didMoveToWindowNotifyObservers()
@@ -186,12 +203,12 @@ private extension UIView {
 
     func didMoveToWindowNotifyObservers() {
         if window == nil {
-            ViewListener.currentInstance.observers.forEach {
-                $0.value?.viewDidGetRemovedFromSuperview(self, identifier: identifier)
+            TooltipTargetViewListener.currentInstance.observers.forEach {
+                $0.value?.targetViewDidGetRemovedFromSuperview(self, identifier: tooltipIdentifier)
             }
         } else {
-            ViewListener.currentInstance.observers.forEach {
-                $0.value?.viewDidMoveToWindow(self, identifier: identifier)
+            TooltipTargetViewListener.currentInstance.observers.forEach {
+                $0.value?.targetViewDidMoveToWindow(self, identifier: tooltipIdentifier)
             }
         }
     }

@@ -16,7 +16,7 @@ internal extension UITabBar {
         return tabBarButtons
     }
 
-    /// Returns item instance that corresponds with provided tab bar button
+    /// Returns item instance that corresponds to provided tab bar button
     func item(of button: UIControl) -> UITabBarItem? {
         guard let buttonItemIndex = buttons.firstIndex(where: { $0 === button }) else {
             return nil

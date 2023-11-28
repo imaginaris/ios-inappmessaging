@@ -87,10 +87,14 @@
 		45EFE1B92A5329CA003DF928 /* SDKInitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EFE1B82A5329CA003DF928 /* SDKInitHelper.swift */; };
 		4B1A88AB274F6896002724B6 /* dummy-font.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4B1A88AA274F6891002724B6 /* dummy-font.otf */; };
 		4BBE7EAF274F1A6A0039D2BF /* UIFontExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE7EAE274F1A6A0039D2BF /* UIFontExtensionSpec.swift */; };
+		5A3C327C97AF357A18CAF6D3 /* Pods_RInAppMessaging_Example_Tests_Common_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34016F1F2DDBE7DB346CC1D8 /* Pods_RInAppMessaging_Example_Tests_Common_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		68F09F066D311F4765B4E2EC /* Pods_RInAppMessaging_Example_Tests_Common_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690D6A2802BB15C96499111E /* Pods_RInAppMessaging_Example_Tests_Common_UITests.framework */; };
+		ABB2F3C934A539C423234525 /* Pods_RInAppMessaging_Example_Tests_Common_IntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAC2882EC493B4DD171DF4D /* Pods_RInAppMessaging_Example_Tests_Common_IntegrationTests.framework */; };
+		AF54B29F09FB8A3AA2FE1A97 /* Pods_RInAppMessaging_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F67A5D7A441CB1CBDAB4425 /* Pods_RInAppMessaging_Example.framework */; };
 		C9827558262C423C00476505 /* BackoffSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9827557262C423C00476505 /* BackoffSpec.swift */; };
 		D24CF280294BE3FA007C6C85 /* UITabBarExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24CF27F294BE3F9007C6C85 /* UITabBarExtensionSpec.swift */; };
 		D911DC4F211115730082B950 /* ConfigurationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F418282110FD9F00E2158F /* ConfigurationSpec.swift */; };
@@ -149,6 +153,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F67A5D7A441CB1CBDAB4425 /* Pods_RInAppMessaging_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RInAppMessaging_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		214B930A2585170AD1CD86C0 /* Pods-RInAppMessaging_Example.uitests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example.uitests.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example/Pods-RInAppMessaging_Example.uitests.xcconfig"; sourceTree = "<group>"; };
+		2FAC2882EC493B4DD171DF4D /* Pods_RInAppMessaging_Example_Tests_Common_IntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RInAppMessaging_Example_Tests_Common_IntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34016F1F2DDBE7DB346CC1D8 /* Pods_RInAppMessaging_Example_Tests_Common_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RInAppMessaging_Example_Tests_Common_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45073FA7277CDBF0007CB732 /* ping.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ping.json; sourceTree = "<group>"; };
 		4516601C23CD740300310181 /* MainContainerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerSpec.swift; sourceTree = "<group>"; };
 		4518EEDD270F73BB00E8CBBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -231,6 +239,8 @@
 		45EFE1B82A5329CA003DF928 /* SDKInitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKInitHelper.swift; sourceTree = "<group>"; };
 		4B1A88AA274F6891002724B6 /* dummy-font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dummy-font.otf"; sourceTree = "<group>"; };
 		4BBE7EAE274F1A6A0039D2BF /* UIFontExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensionSpec.swift; sourceTree = "<group>"; };
+		5A396D224C8DA20DFA42C060 /* Pods-RInAppMessaging_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example.release.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example/Pods-RInAppMessaging_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5D9C84EA965291C46D468ED6 /* Pods-RInAppMessaging_Example-Tests-Common-Tests.uitests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-Tests.uitests.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-Tests/Pods-RInAppMessaging_Example-Tests-Common-Tests.uitests.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RInAppMessaging_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RInAppMessaging_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,8 +249,16 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		614F5FDB3676C7A3ACBCA575 /* Pods-RInAppMessaging_Example-Tests-Common-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-Tests.debug.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-Tests/Pods-RInAppMessaging_Example-Tests-Common-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		690D6A2802BB15C96499111E /* Pods_RInAppMessaging_Example_Tests_Common_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RInAppMessaging_Example_Tests_Common_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA608F3248603BA00A8260D /* Example-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Example-Debug.xcconfig"; sourceTree = "<group>"; };
 		6DA608F424860B7F00A8260D /* Example-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Example-Release.xcconfig"; sourceTree = "<group>"; };
+		7841E3BA879B9D0D84FE47E5 /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.uitests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.uitests.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.uitests.xcconfig"; sourceTree = "<group>"; };
+		874361D41642DECDF69194FD /* Pods-RInAppMessaging_Example-Tests-Common-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-UITests.debug.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-UITests/Pods-RInAppMessaging_Example-Tests-Common-UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A35BA54B03418B36D8A2D6C4 /* Pods-RInAppMessaging_Example-Tests-Common-UITests.uitests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-UITests.uitests.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-UITests/Pods-RInAppMessaging_Example-Tests-Common-UITests.uitests.xcconfig"; sourceTree = "<group>"; };
+		A3BAE4D42B2A81C38802ACD3 /* Pods-RInAppMessaging_Example-Tests-Common-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-UITests.release.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-UITests/Pods-RInAppMessaging_Example-Tests-Common-UITests.release.xcconfig"; sourceTree = "<group>"; };
+		AE72B6A56982D5D0D8716BCF /* Pods-RInAppMessaging_Example-Tests-Common-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-Tests.release.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-Tests/Pods-RInAppMessaging_Example-Tests-Common-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B015FE4F4F36D9F7FF044067 /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.debug.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9827557262C423C00476505 /* BackoffSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackoffSpec.swift; sourceTree = "<group>"; };
 		D24CF27F294BE3F9007C6C85 /* UITabBarExtensionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarExtensionSpec.swift; sourceTree = "<group>"; };
 		D924268022D91046002F50D3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -252,6 +270,8 @@
 		D9F418282110FD9F00E2158F /* ConfigurationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationSpec.swift; sourceTree = "<group>"; };
 		E686BF512A2692CD00D4E3E9 /* TooltipViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TooltipViewSpec.swift; sourceTree = "<group>"; };
 		E686BF532A2692DD00D4E3E9 /* tooltip-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tooltip-data.json"; sourceTree = "<group>"; };
+		EB1F8407266CA858507A226A /* Pods-RInAppMessaging_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example.debug.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example/Pods-RInAppMessaging_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F5A755BC553290D8E2D8400C /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.release.xcconfig"; path = "Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC1872372A49B7C0005EB10B /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		FC1872392A49B7D3005EB10B /* UserInfoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHelper.swift; sourceTree = "<group>"; };
 		FC18723B2A4E97A6005EB10B /* ConstantSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantSpec.swift; sourceTree = "<group>"; };
@@ -282,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F09F066D311F4765B4E2EC /* Pods_RInAppMessaging_Example_Tests_Common_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB2F3C934A539C423234525 /* Pods_RInAppMessaging_Example_Tests_Common_IntegrationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF54B29F09FB8A3AA2FE1A97 /* Pods_RInAppMessaging_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A3C327C97AF357A18CAF6D3 /* Pods_RInAppMessaging_Example_Tests_Common_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +552,10 @@
 			isa = PBXGroup;
 			children = (
 				4518EEDD270F73BB00E8CBBC /* Foundation.framework */,
+				1F67A5D7A441CB1CBDAB4425 /* Pods_RInAppMessaging_Example.framework */,
+				2FAC2882EC493B4DD171DF4D /* Pods_RInAppMessaging_Example_Tests_Common_IntegrationTests.framework */,
+				34016F1F2DDBE7DB346CC1D8 /* Pods_RInAppMessaging_Example_Tests_Common_Tests.framework */,
+				690D6A2802BB15C96499111E /* Pods_RInAppMessaging_Example_Tests_Common_UITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -535,6 +563,18 @@
 		B04D923357C1CC9CB229B066 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				EB1F8407266CA858507A226A /* Pods-RInAppMessaging_Example.debug.xcconfig */,
+				214B930A2585170AD1CD86C0 /* Pods-RInAppMessaging_Example.uitests.xcconfig */,
+				5A396D224C8DA20DFA42C060 /* Pods-RInAppMessaging_Example.release.xcconfig */,
+				B015FE4F4F36D9F7FF044067 /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.debug.xcconfig */,
+				7841E3BA879B9D0D84FE47E5 /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.uitests.xcconfig */,
+				F5A755BC553290D8E2D8400C /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.release.xcconfig */,
+				614F5FDB3676C7A3ACBCA575 /* Pods-RInAppMessaging_Example-Tests-Common-Tests.debug.xcconfig */,
+				5D9C84EA965291C46D468ED6 /* Pods-RInAppMessaging_Example-Tests-Common-Tests.uitests.xcconfig */,
+				AE72B6A56982D5D0D8716BCF /* Pods-RInAppMessaging_Example-Tests-Common-Tests.release.xcconfig */,
+				874361D41642DECDF69194FD /* Pods-RInAppMessaging_Example-Tests-Common-UITests.debug.xcconfig */,
+				A35BA54B03418B36D8A2D6C4 /* Pods-RInAppMessaging_Example-Tests-Common-UITests.uitests.xcconfig */,
+				A3BAE4D42B2A81C38802ACD3 /* Pods-RInAppMessaging_Example-Tests-Common-UITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -592,9 +632,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 453D242F26A0DE5100FB9E6A /* Build configuration list for PBXNativeTarget "UITests" */;
 			buildPhases = (
+				9CFE8C075EA3D255ED724BF6 /* [CP] Check Pods Manifest.lock */,
 				453D242226A0DE5100FB9E6A /* Sources */,
 				453D242326A0DE5100FB9E6A /* Frameworks */,
 				453D242426A0DE5100FB9E6A /* Resources */,
+				CB85BBBF13F5D70BEFC32682 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -610,9 +652,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B5724325ACE90F005A80F7 /* Build configuration list for PBXNativeTarget "IntegrationTests" */;
 			buildPhases = (
+				3E466BCF171AED4419FD1012 /* [CP] Check Pods Manifest.lock */,
 				45B5723825ACE90F005A80F7 /* Sources */,
 				45B5723925ACE90F005A80F7 /* Frameworks */,
 				45B5723A25ACE90F005A80F7 /* Resources */,
+				0E8EC5DED3033A248BCD58BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -628,10 +672,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RInAppMessaging_Example" */;
 			buildPhases = (
+				73276948845FCD799FA3DC85 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				450857B623B5FD9300FBCFBF /* SwiftLint */,
+				AD7244D94984F13CFC422C7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -646,9 +692,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
+				0F5922C05364336DF89C399B /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
+				CBE80366FBE178761AEE9FA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -785,6 +833,102 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E8EC5DED3033A248BCD58BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOHTTPParser/CNIOHTTPParser.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RInAppMessaging/RInAppMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/RSDKUtils/RSDKUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/Shock/Shock.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOCore/NIOCore.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOEmbedded/NIOEmbedded.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHTTP1/NIOHTTP1.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOPosix/NIOPosix.framework",
+				"${BUILT_PRODUCTS_DIR}/_NIODataStructures/_NIODataStructures.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOAtomics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIODarwin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOHTTPParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOLinux.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOWindows.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RInAppMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSDKUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOConcurrencyHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOEmbedded.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHTTP1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOPosix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/_NIODataStructures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F5922C05364336DF89C399B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RInAppMessaging_Example-Tests-Common-Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E466BCF171AED4419FD1012 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		450857B623B5FD9300FBCFBF /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -802,6 +946,204 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --strict\n";
+		};
+		73276948845FCD799FA3DC85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RInAppMessaging_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CFE8C075EA3D255ED724BF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RInAppMessaging_Example-Tests-Common-UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD7244D94984F13CFC422C7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example/Pods-RInAppMessaging_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOHTTPParser/CNIOHTTPParser.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RInAppMessaging/RInAppMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/RSDKUtils/RSDKUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/Shock/Shock.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOCore/NIOCore.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOEmbedded/NIOEmbedded.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHTTP1/NIOHTTP1.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOPosix/NIOPosix.framework",
+				"${BUILT_PRODUCTS_DIR}/_NIODataStructures/_NIODataStructures.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOAtomics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIODarwin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOHTTPParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOLinux.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOWindows.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RInAppMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSDKUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOConcurrencyHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOEmbedded.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHTTP1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOPosix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/_NIODataStructures.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example/Pods-RInAppMessaging_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB85BBBF13F5D70BEFC32682 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-UITests/Pods-RInAppMessaging_Example-Tests-Common-UITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOHTTPParser/CNIOHTTPParser.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RInAppMessaging/RInAppMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/RSDKUtils/RSDKUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/Shock/Shock.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOCore/NIOCore.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOEmbedded/NIOEmbedded.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHTTP1/NIOHTTP1.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOPosix/NIOPosix.framework",
+				"${BUILT_PRODUCTS_DIR}/_NIODataStructures/_NIODataStructures.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOAtomics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIODarwin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOHTTPParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOLinux.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOWindows.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RInAppMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSDKUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOConcurrencyHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOEmbedded.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHTTP1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOPosix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/_NIODataStructures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-UITests/Pods-RInAppMessaging_Example-Tests-Common-UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBE80366FBE178761AEE9FA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-Tests/Pods-RInAppMessaging_Example-Tests-Common-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOHTTPParser/CNIOHTTPParser.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RInAppMessaging/RInAppMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/RSDKUtils/RSDKUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/Shock/Shock.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOCore/NIOCore.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOEmbedded/NIOEmbedded.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHTTP1/NIOHTTP1.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOPosix/NIOPosix.framework",
+				"${BUILT_PRODUCTS_DIR}/_NIODataStructures/_NIODataStructures.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOAtomics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIODarwin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOHTTPParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOLinux.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOWindows.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RInAppMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSDKUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOConcurrencyHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOEmbedded.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHTTP1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOPosix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/_NIODataStructures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RInAppMessaging_Example-Tests-Common-Tests/Pods-RInAppMessaging_Example-Tests-Common-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -965,6 +1307,7 @@
 /* Begin XCBuildConfiguration section */
 		453D242D26A0DE5100FB9E6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 874361D41642DECDF69194FD /* Pods-RInAppMessaging_Example-Tests-Common-UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -990,6 +1333,7 @@
 		};
 		453D242E26A0DE5100FB9E6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3BAE4D42B2A81C38802ACD3 /* Pods-RInAppMessaging_Example-Tests-Common-UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1087,6 +1431,7 @@
 		};
 		4592B4C1270263D4004FF27B /* UITests */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D9C84EA965291C46D468ED6 /* Pods-RInAppMessaging_Example-Tests-Common-Tests.uitests.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Tests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.rakuten.inappmessaging.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1099,6 +1444,7 @@
 		};
 		4592B4C2270263D4004FF27B /* UITests */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7841E3BA879B9D0D84FE47E5 /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.uitests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1125,6 +1471,7 @@
 		};
 		4592B4C3270263D4004FF27B /* UITests */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A35BA54B03418B36D8A2D6C4 /* Pods-RInAppMessaging_Example-Tests-Common-UITests.uitests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1150,6 +1497,7 @@
 		};
 		45B5724425ACE90F005A80F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B015FE4F4F36D9F7FF044067 /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1176,6 +1524,7 @@
 		};
 		45B5724525ACE90F005A80F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5A755BC553290D8E2D8400C /* Pods-RInAppMessaging_Example-Tests-Common-IntegrationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1342,6 +1691,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 614F5FDB3676C7A3ACBCA575 /* Pods-RInAppMessaging_Example-Tests-Common-Tests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Tests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.rakuten.inappmessaging.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1354,6 +1704,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE72B6A56982D5D0D8716BCF /* Pods-RInAppMessaging_Example-Tests-Common-Tests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Tests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.rakuten.inappmessaging.$(PRODUCT_NAME:rfc1034identifier)";

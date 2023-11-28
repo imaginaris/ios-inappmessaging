@@ -31,6 +31,7 @@ internal extension View {
 
 @available(iOS 15.0, *)
 public extension View {
+    // docs
     func canHaveTooltip(identifier: String) -> some View {
         modifier(TooltipViewModifier(identifier: identifier))
     }
